@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text&family=Noto+Sans:ital,wght@1,600&family=Quicksand:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Golos+Text&family=Noto+Sans:ital,wght@1,600&family=Quicksand:wght@300;500;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Golos Text', sans-serif;
+    /* font-family: 'Noto Sans', sans-serif; */
+    /* font-family: 'Quicksand', sans-serif; */
+    color: black;
+    font-size: medium;
+}
+
+
+.body{
+    background-color: #D3E1EB;
+    background-image: url(./Iconos/Captura\ de\ pantalla\ 2023-03-11\ 172841.jpg);
+    background-repeat: no-repeat;
+    background-position: 50px 50px;
+    background-size: 750px;
+    background-position: 150px 150px;
+}
+
+#header{
+    background-color: rgb(255, 255, 255) ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10%;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+
+.imgLogo{
+    height: 100px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.imgLogo:hover{
+    transform:scale(1.2) ;
+}
+
+footer{
+    background-color: rgb(255, 255, 255);
+    height: 100px;
+}
+
+form img{
+    height: 30px;
+}
+
+label{
+    margin-top: 10px;
+    color: #004AAD;
+    font-size: 30px;
+}
+
+input{
+    border: 3px solid #004AAD;
+    width: 90%;
+    height: 40px; 
+    
+}
+#inputs{
+    border: 3px solid #004AAD;
+    width: 90%;
+    height: 40px; 
+}
+
+#input{
+    margin-top: 30px;
+}
+#registrar{
+    color: #004AAD;
+    border-radius: 10px;
+    height: 50px;
+    border-color: white;
+    background-color: #ffffff;
+    font-size: 30px;
+}
+
+.container{
+    margin-top: 50px;
+}
+
+#input-masculino{
+    margin-top: 30px;
+    padding-left: 545px;
+}
+
+#input-femenino{
+    margin-top: 30px;
+    padding-right: 100px;
+}
+
+#checkbox-masculino{
+    padding-left: 500px;
+}
+
+#checkbox-femenino{
+    padding-right:604px;
+}
+
+#masculino{
+    height: 35px;
+}
+
+#femenino{
+    height: 35px;
+}
+
+.generos{
+    height: 60px;
+}
+
+footer{
+    margin-top: 100px;
+    background-color: rgb(255, 255, 255);
+    height: 100px;
+}
+

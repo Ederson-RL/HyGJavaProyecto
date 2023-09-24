@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Inicio</title>
+    <link rel="stylesheet" th:href="@{/css/styleCatalogo.css}">
+    <!-- Bootstrap -->
+    <link  th:href="@{css/bootstrap.min.css}" href="../../static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+<body class="body">
+
+<!-- <header id="header">
+    <nav class="navbar navbar-expand-md navbar bg">
+        <div class="logo">
+            <img id="imglogo" th:src="@{/Iconos/image-removebg-preview.png}" class="img-fluid" alt="Logo empresa">
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/index}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/Nosotros}">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/contacto}">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div>
+        <a class="btn btn-outline-primary" th:href="@{/login}">INICIO <br> DE SESIÓN</a>
+    </div>
+</header> -->
+
+    <!-- Contenido -->
+    <header id="header">
+        <nav class="navbar navbar-expand-md navbar bg">
+            <div class="logo">
+                <img id="imglogo" th:src="@{/Iconos/image-removebg-preview.png}" class="img-fluid" alt="Logo empresa">
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" th:href="@{/index}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/Nosotros}">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/contacto}">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div>
+            <a class="btn btn-outline-primary" th:href="@{/login}">INICIO <br> DE SESIÓN</a>
+        </div>
+    </header> 
+  <div > 
+            <p class="linea1">CATEGORIAS</p>
+          </div>
+        <div class="container1">
+    <main>
+       
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 row-cols-md-4 g-4">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img th:src="@{/Iconos/Despensa.png/}">
+                        <div class="card-body">
+                            <p class="titulos">DESPENSA</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-success" id="botonproducto">Ver Productos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img th:src="@{/Iconos/Lacteos.png}">
+                        <div class="card-body">
+                            <p class="titulos">LACTEOS, HUEVOS Y<br> REFRIGERADOS </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-success" id="botonproducto">Ver Productos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img th:src="@{/Iconos/Bebidas.png}">
+                        <div class="card-body">
+                            <p class="titulos">BEBIDAS</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-success" id="botonproducto">Ver Productos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img th:src="@{/Iconos/Limpieza.png}">
+                        <div class="card-body">
+                            <p class="titulos">Limpieza</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-success" id="botonproducto">Ver Productos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container1">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 row-cols-md-4 g-4">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img th:src="@{/Iconos/Cuidado personal.png}">
+                        <div class="card-body">
+                            <p class="titulos">Cuidado personal</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-success" id="botonproducto">Ver Productos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img th:src="@{/Iconos/Pasabocas.png}">
+                        <div class="card-body">
+                            <p class="titulos">Pasabocas y dulces</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-success" id="botonproducto">Ver Productos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+</body>
+</html>
+
