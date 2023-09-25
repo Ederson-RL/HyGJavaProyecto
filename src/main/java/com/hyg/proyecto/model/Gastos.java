@@ -1,5 +1,7 @@
 package com.hyg.proyecto.model;
 
+
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,7 +22,7 @@ public class Gastos{
     }
 
     // Constructor que toma todos los campos como parámetros
-    public Gastos(int id, String fecha, String descripcion, int valor) {
+    public Gastos(int id, String  fecha, String descripcion, int valor) {
         this.id = id;
         this.fecha = fecha;
         this.descripcion = descripcion;
@@ -36,15 +38,15 @@ public class Gastos{
         this.id = id;
     }
 
-    public String getFecha() {
+    public String  getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(String  fecha) {
         this.fecha = fecha;
     }
 
-    public String getDescripcion() {
+    public String  getDescripcion() {
         return descripcion;
     }
 

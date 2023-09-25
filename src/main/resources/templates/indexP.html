@@ -24,12 +24,12 @@
         </nav>
         <nav class="navbar navbar-expand-md navbar bg">
             <nav class="notify">
-                <a href="./../index.html">
+                <a href="">
                     <img src="./../Iconos/notifyAzul.jpg" alt="Notify">
                 </a>
             </nav>
             <nav class="user">
-                <a href="./../index.html">
+                <a href="">
                     <img src="./../Iconos/iconoAdmin.jpg" alt="User-ico">
                 </a>
             </nav>
@@ -39,28 +39,28 @@
                 <li>
                     <strong>GESTIONAR VENTAS</strong>
                     <ul>
-                        <li><a th:href="@{/FormulariosAdmin/RegVenta.html}"> Registrar Ventas</a></li>
-                        <li><a th:href="@{/Errores/Pconstrucción.html}">Informe de Ventas</a></li>
+                        <li><a th:href="@{/listarV}"> Registrar Ventas</a></li>
+                        <li><a th:href="@{Error404}">Informe de Ventas</a></li>
                     </ul>
                 </li>
                 <li>
                     <strong>GESTIONAR COMPRAS</strong>
                     <ul>
-                        <li><a th:href="@{/Errores/Pconstrucción.html}">Ver Proveedores</a></li>
-                        <li><a th:href="@{/FormulariosAdmin/RegVenta.html}">Registrar Compra</a></li>
-                        <li><a th:href="@{/Errores/Pconstrucción.html}">Detalles de la Compra</a></li>
+                        <li><a th:href="@{Error404}">Ver Proveedores</a></li>
+                        <li><a th:href="@{/listarC}">Registrar Compra</a></li>
+                        <li><a th:href="@{/listarG}">Registrar Gastos</a></li>
                     </ul>
                 </li>
                 <li>
                     <strong>GESTIONAR INVENTARIO</strong>
                     <ul>
-                        <li><a th:href="@{/FormulariosAdmin/Inventario.html}">Ver Inventario</a></li>
+                        <li><a th:href="@{/listar}">Ver Inventario</a></li>
                     </ul>
                 </li>
                 <li>
                     <strong>GESTIONAR PEDIDOS</strong>
                     <ul>
-                        <li><a th:href="@{/FormulariosAdmin/Pedidos.html}">Ver Pedidos</a></li>
+                        <li><a th:href="@{Error404}">Ver Pedidos</a></li>
                     </ul>
                 </li>
             </ul>
@@ -68,6 +68,9 @@
     </header>
     <div class="container mt-4">
         <a th:href="@{/new}" class="btn btn-primary">NUEVO</a>
+        <a th:href="@{/productos/exportP/excelP}" class="btn btn-primary">EXCEL</a> 
+
+        
         <table class="table">
             <thead>
                 <tr>
