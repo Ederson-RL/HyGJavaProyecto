@@ -97,15 +97,25 @@ public class controller {
                return "Contacto";
        }
 
-           @GetMapping("/dashboardAdmin")
+    @GetMapping("/dashboardAdmin")
     public String visualzardashboardAdmin(Model modelo){
    
                return "DashboardAdmin";
        }
-           @GetMapping("/dashboardCliente")
+    @GetMapping("/dashboardCliente")
     public String visualzardashboardCliente(Model modelo){
    
                return "DashboardCliente";
+       }
+    @GetMapping("/Error404")
+    public String visualzarError404(Model modelo){
+   
+               return "Error404";
+       }
+    @GetMapping("/Error500")
+    public String visualzarError500(Model modelo){
+   
+               return "Error500";
        }
     
 

@@ -1,5 +1,7 @@
 package com.hyg.proyecto.model;
 
+import java.sql.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +15,7 @@ public class Compras {
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
     private int idcompra;
-    private String fechaC;
+    private Date fechaC;
     private String proveedorC;
     private String productoC;
     private int cantidadC;
@@ -23,7 +25,7 @@ public class Compras {
     }
 
     
-    public Compras(int idcompra, String fechaC, String proveedorC, String productoC, int cantidadC, int precioC) {
+    public Compras(int idcompra, Date fechaC, String proveedorC, String productoC, int cantidadC, int precioC) {
         this.idcompra = idcompra;
         this.fechaC = fechaC;
         this.proveedorC = proveedorC;
@@ -40,11 +42,11 @@ public class Compras {
         this.idcompra = idcompra;
     }
 
-    public String getFechaC() {
+    public Date getFechaC() {
         return fechaC;
     }
 
-    public void setFechaC(String fechaC) {
+    public void setFechaC(Date fechaC) {
         this.fechaC = fechaC;
     }
 
