@@ -15,18 +15,18 @@ public class Producto {
     private int id;
     private String NombreP;
     private int cantidadP;
-    private double precio;
+    private int precio;
 
     public Producto() {
        
         this.id = 0;
         this.NombreP = "";
         this.cantidadP = 0;
-        this.precio = 0.0;
+        this.precio = 0;
     }
 
    
-    public Producto(int id, String NombreP, int cantidadP, double precio) {
+    public Producto(int id, String NombreP, int cantidadP, int precio) {
        
         this.id = id;
         this.NombreP = NombreP;
@@ -59,11 +59,11 @@ public class Producto {
         this.cantidadP = cantidadP;
     }
 
-    public double getPrecio() {
+    public int getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(int precio) {
         this.precio = precio;
     }
 }
