@@ -69,31 +69,35 @@
     <div class="container mt-4" >
         <div class="row justify-content-center">
         <div class="col-sm-6">
-            <form th:action="@{/saveV}" th:object=${venta} method="POST" >
+            <form th:action="@{/saveC}" th:object=${Compras} method="POST" >
                 <div class="card">
                 <div class="card-header">
-                    <h3>Modulo Ventas</h3>
+                    <h3>Modulo Compras</h3>
                 </div>
                 <div class="card-body">
-                    <div class="form-group"> 
-                        <label for="">id  </label>
-                        <input th:field="*{id}" type="text" class="form-control">
+                    <div class="form-group">
+                        <label for="idcompra">ID Compra</label>
+                        <input th:field="*{idcompra}" type="text" class="form-control" id="idcompra">
                     </div>
-                    <div class="form-group"> 
-                        <label for="">Fecha  </label>
-                        <input th:field="*{fecha}" type="date" class="form-control">
+                    <div class="form-group">
+                        <label for="fechaC">Fecha</label>
+                        <input th:field="*{fechaC}" type="text" class="form-control" id="fechaC">
                     </div>
-                    <div class="form-group"> 
-                        <label for=""> Producto </label>
-                        <input th:field="*{producto}" type="text" class="form-control">
+                    <div class="form-group">
+                        <label for="proveedorC">Proveedor</label>
+                        <input th:field="*{proveedorC}" type="text" class="form-control" id="proveedorC">
                     </div>
-                    <div class="form-group"> 
-                        <label for="">Cantidad </label>
-                        <input th:field="*{cantidad}" type="number" class="form-control">
+                    <div class="form-group">
+                        <label for="productoC">Producto</label>
+                        <input th:field="*{productoC}" type="text" class="form-control" id="productoC">
                     </div>
-                    <div class="form-group"> 
-                        <label for="">Precio </label>
-                        <input th:field="*{precio}" type="text" class="form-control">
+                    <div class="form-group">
+                        <label for="cantidadC">Cantidad</label>
+                        <input th:field="*{cantidadC}" type="number" class="form-control" id="cantidadC">
+                    </div>
+                    <div class="form-group">
+                        <label for="precioC">Precio</label>
+                        <input th:field="*{precioC}" type="text" class="form-control" id="precioC">
                     </div>
                 </div>
 

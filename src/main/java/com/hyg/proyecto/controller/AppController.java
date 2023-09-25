@@ -47,7 +47,7 @@ public class AppController {
 	}
 
 	@GetMapping("/users/edit/{id}")
-	public String editUser(@PathVariable("id") Long id, Model model) {
+	public String editUser(@PathVariable Long id, Model model) {
 		User user = service.get(id);
 		List<Role> listRoles = service.listRoles();
 		model.addAttribute("user", user);
