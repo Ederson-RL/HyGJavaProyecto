@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html   xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{css/menuAdmin.css}">
+    <!-- Bootstrap -->
+    <link  th:href="@{css/bootstrap.min.css}" href="../../static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css}"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous">
+      </head>
+<body>
+    <header id="header">
+        <nav class="navbar navbar-expand-md navbar bg">
+            <div class="icono-menu">
+                <img src="./../Iconos/HamburguerSinFondo.png" id="icono-menu">
+            </div>
+            <div class="logo">
+                <img id="imglogo" th:src="@{/Iconos/image-removebg-preview.png}" class="img-fluid" alt="Logo empresa">
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-md navbar bg">
+            <nav class="notify">
+                <a href="">
+                    <img src="./../Iconos/notifyAzul.jpg" alt="Notify">
+                </a>
+            </nav>
+            <nav class="user">
+                <a href="">
+                    <img src="./../Iconos/iconoAdmin.jpg" alt="User-ico">
+                </a>
+            </nav>
+        </nav>
+        <div class="cont-menu active" id="menu">
+            <ul class="ul-pading">
+                <li>
+                    <strong>GESTIONAR VENTAS</strong>
+                    <ul>
+                        <li><a th:href="@{/listarV}"> Registrar Ventas</a></li>
+                        <li><a th:href="@{Error400}">Informe de Ventas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>GESTIONAR COMPRAS</strong>
+                    <ul>
+                        <li><a th:href="@{Error400}">Ver Proveedores</a></li>
+                        <li><a th:href="@{/listarC}">Registrar Compra</a></li>
+                        <li><a th:href="@{/listarG}">Registrar Gastos</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>GESTIONAR INVENTARIO</strong>
+                    <ul>
+                        <li><a th:href="@{/listar}">Ver Inventario</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>GESTIONAR PEDIDOS</strong>
+                    <ul>
+                        <li><a th:href="@{Error400}">Ver Pedidos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="container mt-4">
+        <a th:href="@{/newC}" class="btn btn-primary">NUEVO</a>
+        <a th:href="@{/compra/exportC/excelC}" class="btn btn-primary">Excel</a>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID Compra</th>
+                    <th>Fecha</th>
+                    <th>Proveedor</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>
+                        <div class="row">
+                            <div class="col">
+                              <a th:href="@{/compra/exportC/excelC}"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-check" viewBox="0 0 16 16">
+                                <path d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                                <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                              </svg></a>
+                            </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="compra : ${Compras}">
+                    <td th:text="${compra.idcompra}"></td>
+                    <td th:text="${compra.fechaC}"></td>
+                    <td th:text="${compra.proveedorC}"></td>
+                    <td th:text="${compra.productoC}"></td>
+                    <td th:text="${compra.cantidadC}"></td>
+                    <td th:text="${compra.precioC}"></td>
+                    <td>
+                        <a th:href="@{/editarC/}+${compra.idcompra}" class="btn btn-warning">Editar</a>
+                       <a th:onclick="eliminar([[${compra.idcompra}]])" class="btn btn-danger">Eliminar</a>
+                        </td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script th:src="@{/js/FuncionesC.js}"></script>
+    <script th:src="@{/js/appAdmin.js}"></script>
+    <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js}"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+</html>

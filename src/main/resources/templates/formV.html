@@ -39,28 +39,28 @@
                 <li>
                     <strong>GESTIONAR VENTAS</strong>
                     <ul>
-                        <li><a th:href="@{/FormulariosAdmin/RegVenta.html}"> Registrar Ventas</a></li>
-                        <li><a th:href="@{/Errores/Pconstrucción.html}">Informe de Ventas</a></li>
+                        <li><a th:href="@{/listarV}"> Registrar Ventas</a></li>
+                        <li><a th:href="@{Error400}">Informe de Ventas</a></li>
                     </ul>
                 </li>
                 <li>
                     <strong>GESTIONAR COMPRAS</strong>
                     <ul>
-                        <li><a th:href="@{/Errores/Pconstrucción.html}">Ver Proveedores</a></li>
-                        <li><a th:href="@{/FormulariosAdmin/RegVenta.html}">Registrar Compra</a></li>
-                        <li><a th:href="@{/Errores/Pconstrucción.html}">Detalles de la Compra</a></li>
+                        <li><a th:href="@{Error400}">Ver Proveedores</a></li>
+                        <li><a th:href="@{/listarC}">Registrar Compra</a></li>
+                        <li><a th:href="@{/listarG}">Registrar Gastos</a></li>
                     </ul>
                 </li>
                 <li>
                     <strong>GESTIONAR INVENTARIO</strong>
                     <ul>
-                        <li><a th:href="@{/FormulariosAdmin/Inventario.html}">Ver Inventario</a></li>
+                        <li><a th:href="@{/listar}">Ver Inventario</a></li>
                     </ul>
                 </li>
                 <li>
                     <strong>GESTIONAR PEDIDOS</strong>
                     <ul>
-                        <li><a th:href="@{/FormulariosAdmin/Pedidos.html}">Ver Pedidos</a></li>
+                        <li><a th:href="@{Error400}">Ver Pedidos</a></li>
                     </ul>
                 </li>
             </ul>
@@ -81,7 +81,7 @@
                     </div>
                     <div class="form-group"> 
                         <label for="">Fecha  </label>
-                        <input th:field="*{fecha}" type="text" class="form-control">
+                        <input th:field="*{fecha}" type="date" class="form-control">
                     </div>
                     <div class="form-group"> 
                         <label for=""> Producto </label>
@@ -105,7 +105,19 @@
         </div>
         </div>
     </div>
+    <script th:inline="javascript">
+   
+        var fechaActual = new Date();
 
+   
+        var añoActual = fechaActual.getFullYear();
+
+        
+        var inputFecha = document.getElementById("fecha");
+        inputFecha.min = añoActual + "-01-01"; 
+        inputFecha.max = añoActual + "-12-31"; 
+     
+    </script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script th:src="@{/js/Funciones.js}"></script>
