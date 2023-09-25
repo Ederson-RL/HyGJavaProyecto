@@ -67,7 +67,7 @@ public class controllerC {
             DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
             String currentDateTime = dateFormatter.format(new Date());
             String headerKey = "Content-Disposition";
-            String headerValue = "attachment; filename=pruebaCampo_"+ currentDateTime +".xlsx";
+            String headerValue = "attachment; filename=Compra_"+ currentDateTime +".xlsx";
             response.setHeader(headerKey, headerValue);
             List<Compras> CompraList = service.listarC();
             CompraExcel excelExporter = new CompraExcel (CompraList);
