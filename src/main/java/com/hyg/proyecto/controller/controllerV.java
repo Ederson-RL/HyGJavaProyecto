@@ -37,7 +37,7 @@ public class controllerV {
     @GetMapping("/listarV")
     public String listarV(Model model){
         List<Venta>ventas=service.listarV();
-        model.addAttribute("Ventas", ventas);
+        model.addAttribute("venta", ventas);
         return "indexV";
 
     }
