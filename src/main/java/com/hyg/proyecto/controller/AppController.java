@@ -1,17 +1,28 @@
 package com.hyg.proyecto.controller;
 
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.hyg.proyecto.model.Producto;
 import com.hyg.proyecto.model.Role;
 import com.hyg.proyecto.model.User;
 import com.hyg.proyecto.service.UserService;
+import com.hyg.proyecto.service.reporteInventario.ProductosExcel;
 
 @Controller
 public class AppController {
@@ -39,6 +50,26 @@ public class AppController {
 	}
 
 	@GetMapping("/users")
+	public String listUsers(Model model, Authentication authentication) {
+		if (authentication != null) {
+			// Obtén los roles del usuario autenticado
+			Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+
+			if (authorities.stream().anyMatch(a -> a.getAuthority().equals("Admin"))) {
+				// El usuario tiene el rol de administrador, realiza alguna acción para
+				// administradores
+				return "DashboardAdmin";
+			} else if (authorities.stream().anyMatch(a -> a.getAuthority().equals("Customer"))) {
+				// El usuario tiene el rol de cliente, realiza alguna acción para clientes
+				return "DashboardCliente";
+			}
+		}
+
+		// Otros casos o roles no manejados
+		return "DashboardCliente";
+	}
+
+	@GetMapping("/userlist")
 	public String listUsers(Model model) {
 		List<User> listUsers = service.listAll();
 		model.addAttribute("listUsers", listUsers);
@@ -61,4 +92,5 @@ public class AppController {
 
 		return "redirect:/users";
 	}
+
 }
