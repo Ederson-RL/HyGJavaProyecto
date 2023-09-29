@@ -15,7 +15,7 @@ public class Venta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String producto;
-    private Date fecha;
+    private String fecha;
     private int cantidad;
     private int precio;
 
@@ -23,7 +23,7 @@ public class Venta {
     }
 
     // Constructor que toma todos los campos como parámetros
-    public Venta(int id, String producto, Date fecha, int cantidad, int precio) {
+    public Venta(int id, String producto, String fecha, int cantidad, int precio) {
         this.id = id;
         this.producto = producto;
         this.fecha = fecha;
@@ -48,11 +48,11 @@ public class Venta {
         this.producto = producto;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
@@ -71,5 +71,4 @@ public class Venta {
     public void setPrecio(int precio) {
         this.precio = precio;
     }
-
 }
