@@ -15,7 +15,7 @@ public class Compras {
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
     private int idcompra;
-    private Date fechaC;
+    private String fechaC;
     private String proveedorC;
     private String productoC;
     private int cantidadC;
@@ -25,7 +25,7 @@ public class Compras {
     }
 
     
-    public Compras(int idcompra, Date fechaC, String proveedorC, String productoC, int cantidadC, int precioC) {
+    public Compras(int idcompra, String fechaC, String proveedorC, String productoC, int cantidadC, int precioC) {
         this.idcompra = idcompra;
         this.fechaC = fechaC;
         this.proveedorC = proveedorC;
@@ -42,11 +42,11 @@ public class Compras {
         this.idcompra = idcompra;
     }
 
-    public Date getFechaC() {
+    public String getFechaC() {
         return fechaC;
     }
 
-    public void setFechaC(Date fechaC) {
+    public void setFechaC(String fechaC) {
         this.fechaC = fechaC;
     }
 
