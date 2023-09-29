@@ -1,4 +1,5 @@
 package com.hyg.proyecto.controller;
+
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -21,11 +22,10 @@ import com.hyg.proyecto.interfazService.IComprasService;
 import com.hyg.proyecto.model.Compras;
 import com.hyg.proyecto.service.reporteCompra.CompraExcel;
 
-
 @Controller
 @RequestMapping
 public class controllerC {
-    @Autowired
+   @Autowired
     private IComprasService service;
     
     @GetMapping("/listarC")

@@ -19,9 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.hyg.proyecto.interfazService.IventaService;
-
 import com.hyg.proyecto.model.Venta;
-
 import com.hyg.proyecto.service.reporteVenta.VentasExcel;
 
 
@@ -37,7 +35,7 @@ public class controllerV {
     @GetMapping("/listarV")
     public String listarV(Model model){
         List<Venta>ventas=service.listarV();
-        model.addAttribute("Ventas", ventas);
+        model.addAttribute("venta", ventas);
         return "indexV";
 
     }

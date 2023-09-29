@@ -37,7 +37,7 @@
                     <h5 class="iniciar-sesion-h1">INICIAR SESIÓN</h5>
                   </div>
                   <div class="card-body custom-height ">
-                    <form th:action="@{/dashboardAdmin}" method="post">
+                    <form th:action="@{/login}" method="post">
                       <div class="form-outline mb-4">
                         <div id="textCliente" class="text-center">
                             <img id="funcionarioIcono" th:src="@{/Iconos/funcionarioIcono.jpg}" class="img-fluid" alt="IconoUsuario" />
@@ -45,7 +45,7 @@
                     </div>
                       <div class="mb-3">
                           <label for="email" class="form-label">Correo Electrónico:</label>
-                          <input type="email" class="form-control" id="email" name="email" required>
+                          <input type="text" class="form-control" id="email" name="email" required>
                           <div class="invalid-feedback">
                             Ingrese un correo válido usando @
                         </div>
@@ -58,21 +58,13 @@
                           <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
                       </div>
                   </form>
-                  <div class="text-center pt-1 mb-5 pb-1">
-                    <a class="link-opacity-75-hover" href="/olvidar-contrasena">¿Olvidaste tu contraseña?</a>
-                </div>
-                <div class="d-flex align-items-center justify-content-center pb-4">
-                  <p class="mb-0 me-2">¿Aún no te has registrado?</p>
-                  <a class="btn btn-outline-primary" th:href="@{/registrar}">REGISTRARSE</a>
 
-              </div>
-              
+                  <div class="form-group">
+                    <span>Si eres nuevo usuario <a th:href="@{/register}">regístrate
+                        aqui</a></span>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div> 
-
+                  </div>
+                    
         </main>
         <footer class="footer">
         </footer>
@@ -80,7 +72,7 @@
         <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js}" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
         <script th:src="@{https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js}" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
         <script th:src="@{js/validacionInicio.js}"></script>
-        <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js}" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script> 
+        <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js}" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script> -->
       </body>
       
 </html>

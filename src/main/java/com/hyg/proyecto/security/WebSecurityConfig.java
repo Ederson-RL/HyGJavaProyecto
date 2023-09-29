@@ -33,7 +33,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		return authProvider;
 	}
 
-	/*~~(Migrate manually based on https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter)~~>*/@Override
+	/*
+	 * ~~(Migrate manually based on
+	 * https://spring.io/blog/2022/02/21/spring-security-without-the-
+	 * websecurityconfigureradapter)~~>
+	 */@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.authenticationProvider(authenticationProvider());
 	}
@@ -45,10 +49,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.anyRequest().permitAll()
 				.and()
 				.formLogin()
+				.loginPage("/login")
 				.usernameParameter("email")
 				.defaultSuccessUrl("/users")
 				.permitAll()
 				.and()
 				.logout().logoutSuccessUrl("/").permitAll();
+
 	}
 }

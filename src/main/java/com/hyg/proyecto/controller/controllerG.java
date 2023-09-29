@@ -20,16 +20,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.hyg.proyecto.interfazService.IgastoService;
 import com.hyg.proyecto.model.Gastos;
-
 import com.hyg.proyecto.service.reporteGastos.GastosExcel;
-
 
 
 
 @Controller
 @RequestMapping
 public class controllerG {
-        @Autowired
+  @Autowired
     private IgastoService service;
     
     @GetMapping("/listarG")
@@ -77,5 +75,4 @@ public class controllerG {
             GastosExcel excelExporter = new GastosExcel(gastosList);
             excelExporter.export(response);
      }
-
 }

@@ -40,13 +40,13 @@
                     <strong>GESTIONAR VENTAS</strong>
                     <ul>
                         <li><a th:href="@{/listarV}"> Registrar Ventas</a></li>
-                        <li><a th:href="@{Error404}">Informe de Ventas</a></li>
+                        <li><a th:href="@{Error400}">Informe de Ventas</a></li>
                     </ul>
                 </li>
                 <li>
                     <strong>GESTIONAR COMPRAS</strong>
                     <ul>
-                        <li><a th:href="@{Error404}">Ver Proveedores</a></li>
+                        <li><a th:href="@{Error400}">Ver Proveedores</a></li>
                         <li><a th:href="@{/listarC}">Registrar Compra</a></li>
                         <li><a th:href="@{/listarG}">Registrar Gastos</a></li>
                     </ul>
@@ -60,7 +60,7 @@
                 <li>
                     <strong>GESTIONAR PEDIDOS</strong>
                     <ul>
-                        <li><a th:href="@{Error404}">Ver Pedidos</a></li>
+                        <li><a th:href="@{Error400}">Ver Pedidos</a></li>
                     </ul>
                 </li>
             </ul>
@@ -82,7 +82,7 @@
                     </div>
                     <div class="form-group"> 
                         <label for="">Fecha  </label>
-                        <input id="fecha" name="fecha" th:field="*{fecha}" type="text" class="form-control" required>
+                        <input id="fecha" name="fecha" th:field="*{fecha}" type="date" class="form-control" required>
                     </div>
                     <div class="form-group"> 
                         <label for=""> Descripcion  </label>

@@ -1,6 +1,6 @@
 package com.hyg.proyecto.model;
 
-
+import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -71,5 +71,4 @@ public class Venta {
     public void setPrecio(int precio) {
         this.precio = precio;
     }
-
 }
