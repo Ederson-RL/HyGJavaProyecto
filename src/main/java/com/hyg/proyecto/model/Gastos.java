@@ -1,6 +1,6 @@
 package com.hyg.proyecto.model;
 
-
+import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +14,7 @@ public class Gastos{
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
     private int id;
-    private String fecha;
+    private Date fecha;
     private String descripcion;
     private int valor;
 
@@ -22,7 +22,7 @@ public class Gastos{
     }
 
     // Constructor que toma todos los campos como parámetros
-    public Gastos(int id, String  fecha, String descripcion, int valor) {
+    public Gastos(int id, Date fecha, String descripcion, int valor) {
         this.id = id;
         this.fecha = fecha;
         this.descripcion = descripcion;
@@ -38,15 +38,15 @@ public class Gastos{
         this.id = id;
     }
 
-    public String  getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(String  fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 
-    public String  getDescripcion() {
+    public String getDescripcion() {
         return descripcion;
     }
 
