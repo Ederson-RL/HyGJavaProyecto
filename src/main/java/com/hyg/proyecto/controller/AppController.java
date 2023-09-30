@@ -1,13 +1,8 @@
 package com.hyg.proyecto.controller;
 
-import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Collection;
-import java.util.Date;
-import java.util.List;
 
-import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -18,11 +13,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.hyg.proyecto.model.Producto;
 import com.hyg.proyecto.model.Role;
 import com.hyg.proyecto.model.User;
 import com.hyg.proyecto.service.UserService;
-import com.hyg.proyecto.service.reporteInventario.ProductosExcel;
 
 @Controller
 public class AppController {

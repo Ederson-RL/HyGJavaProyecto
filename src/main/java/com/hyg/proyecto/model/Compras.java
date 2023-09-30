@@ -1,30 +1,32 @@
 package com.hyg.proyecto.model;
 
-import java.sql.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="Compras")
+@Table(name = "Compras")
 public class Compras {
     @Id
-    @GeneratedValue(strategy =GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idcompra;
     private String fechaC;
     private String proveedorC;
     private String productoC;
     private int cantidadC;
-    private int precioC;   
-    
+    private int precioC;
+
+    @ManyToOne
+    @JoinColumn(name = "proveedor_id")
+    private Proveedor proveedor;
+
     public Compras() {
     }
 
-    
     public Compras(int idcompra, String fechaC, String proveedorC, String productoC, int cantidadC, int precioC) {
         this.idcompra = idcompra;
         this.fechaC = fechaC;

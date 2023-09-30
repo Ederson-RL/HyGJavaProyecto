@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.hyg.proyecto.interfazService.IproductoService;
-import com.hyg.proyecto.model.Producto;
-import com.hyg.proyecto.service.reporteInventario.ProductosExcel;
+// import com.hyg.proyecto.interfazService.IproductoService;
+// import com.hyg.proyecto.model.Producto;
+// import com.hyg.proyecto.service.reporteInventario.ProductosExcel;
 
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
@@ -27,46 +27,46 @@ import org.springframework.validation.annotation.Validated;
 @RequestMapping
 public class controller {
 
-    @Autowired
-    private IproductoService service;
+    // @Autowired
+    // private IproductoService service;
 
-    @GetMapping("/listar")
-    public String listar(Model model) {
-        List<Producto> productos = service.listar();
-        model.addAttribute("productos", productos);
-        return "indexP";
+    // @GetMapping("/listar")
+    // public String listar(Model model) {
+    // List<Producto> productos = service.listar();
+    // model.addAttribute("productos", productos);
+    // return "indexP";
 
-    }
+    // }
 
-    @GetMapping("/new")
-    public String agregar(Model model) {
+    // @GetMapping("/new")
+    // public String agregar(Model model) {
 
-        model.addAttribute("producto", new Producto());
-        return "form";
+    // model.addAttribute("producto", new Producto());
+    // return "form";
 
-    }
+    // }
 
-    @PostMapping("/save")
-    public String save(@Validated Producto p, Model model) {
+    // @PostMapping("/save")
+    // public String save(@Validated Producto p, Model model) {
 
-        service.save(p);
-        return "redirect:/listar";
+    // service.save(p);
+    // return "redirect:/listar";
 
-    }
+    // }
 
-    @GetMapping("/editar/{id}")
-    public String editar(@PathVariable int id, Model model) {
-        Optional<Producto> Producto = service.listarId(id);
-        model.addAttribute("producto", Producto);
-        return "form";
-    }
+    // @GetMapping("/editar/{id}")
+    // public String editar(@PathVariable int id, Model model) {
+    // Optional<Producto> Producto = service.listarId(id);
+    // model.addAttribute("producto", Producto);
+    // return "form";
+    // }
 
-    @GetMapping("/eliminar/{id}")
-    public String delete(Model model, @PathVariable int id) {
-        service.delete(id);
-        return "redirect:/listar";
+    // @GetMapping("/eliminar/{id}")
+    // public String delete(Model model, @PathVariable int id) {
+    // service.delete(id);
+    // return "redirect:/listar";
 
-    }
+    // }
 
     @GetMapping("/login")
     public String visualzarlogin(Model modelo) {
@@ -134,17 +134,18 @@ public class controller {
         return "Error500";
     }
 
-    @GetMapping("/productos/exportP/excelP")
-    public void exportToExcel(HttpServletResponse response) throws IOException {
-        response.setContentType("application/octet-stream");
-        DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
-        String currentDateTime = dateFormatter.format(new Date());
-        String headerKey = "Content-Disposition";
-        String headerValue = "attachment; filename=Productos" + currentDateTime + ".xlsx";
-        response.setHeader(headerKey, headerValue);
-        List<Producto> productosList = service.listar();
-        ProductosExcel excelExporter = new ProductosExcel(productosList);
-        excelExporter.export(response);
-    }
+    // @GetMapping("/productos/exportP/excelP")
+    // public void exportToExcel(HttpServletResponse response) throws IOException {
+    // response.setContentType("application/octet-stream");
+    // DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
+    // String currentDateTime = dateFormatter.format(new Date());
+    // String headerKey = "Content-Disposition";
+    // String headerValue = "attachment; filename=Productos" + currentDateTime +
+    // ".xlsx";
+    // response.setHeader(headerKey, headerValue);
+    // List<Producto> productosList = service.listar();
+    // ProductosExcel excelExporter = new ProductosExcel(productosList);
+    // excelExporter.export(response);
+    // }
 
 }
