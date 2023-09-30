@@ -91,7 +91,36 @@ public class controller {
    
                return "catalogo";
        }
-    
+        @GetMapping("/Despensa")
+    public String visualzarDespensa(Model modelo){
+   
+               return "Despensa";
+       }
+        @GetMapping("/Bebidas")
+    public String visualzarBebidas(Model modelo){
+   
+               return "Bebidas";
+       }
+        @GetMapping("/Lacteos")
+    public String visualzarLacteos(Model modelo){
+   
+               return "Lacteos";
+       }
+         @GetMapping("/Limpieza")
+    public String visualzarLimpieza(Model modelo){
+   
+               return "Limpieza";
+       }
+             @GetMapping("/Cuidado")
+    public String visualzarCuidado(Model modelo){
+   
+               return "Cuidado";
+       }
+                 @GetMapping("/Pasabocas")
+    public String visualzarPasabocas(Model modelo){
+   
+               return "Pasabocas";
+       }
 
     @GetMapping("/Nosotros")
     public String visualzarnosotros(Model modelo){
