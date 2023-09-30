@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Cuidado</title>
+    <link rel="stylesheet" th:href="@{/css/stylesDes.css}">
+    <link  th:href="@{css/bootstrap.min.css}" href="../../static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <!-- Bootstrap -->
+    <header id="header">
+        <nav class="navbar navbar-expand-md navbar bg">
+            <div class="logo">
+                <img id="imglogo" th:src="@{/Iconos/image-removebg-preview.png}" class="img-fluid" alt="Logo empresa" width="300">
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" th:href="@{/index}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/Nosotros}">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/contacto}">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div>
+            <a class="btn btn-outline-primary" th:href="@{/login}">INICIO <br> DE SESIÓN</a>
+        </div>
+    </header> 
+<body>
+    <section class="contenido">
+        <div class="mostrador" id="mostrador">
+            <div class="fila">
+                <div class="item"  onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/shampoo-head-shoulders-control-comezon3.jpg}" alt="">
+                        <p class="descripcion">head shoulders</p>
+                        <span class="precio">$ 14.900</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/shampoo-head-shoulders-limpiza-renovador.jpg}" alt="">
+                        <p class="descripcion">head shoulders</p>
+                        <span class="precio">$ 17.500</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/shampo-head-shoulders-alivio-refres180m.jpg}" alt="">
+                        <p class="descripcion">head shoulders</p>
+                        <span class="precio">$ 11.000</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/acondicionador-tio-nacho-engrosa-415-ml.jpg}" alt="">
+                        <p class="descripcion">Tio nacho</p>
+                        <span class="precio">$ 24.300</span>
+                    </div>
+                </div>
+            </div>
+            <div class="fila">
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/shampoo-clear-200-ml.jpg}" alt="">
+                        <p class="descripcion">shampo clear</p>
+                        <span class="precio">$ 11.900</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto" >
+                        <img th:src="@{/Iconos/acondicionador-sedal-yuya-micelar-340.jpg}" alt="">
+                        <p class="descripcion">Sedal</p>
+                        <span class="precio">$ 12.400</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/acondicionador-sedal-aromas-340-ml.jpg}" alt="">
+                        <p class="descripcion">Sedal</p>
+                        <span class="precio">$ 15.900</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/shampoo-savital-multivitaminas-350ml.jpg}" alt="">
+                        <p class="descripcion">Shampo savital</p>
+                        <span class="precio">$ 11.600</span>
+                    </div>
+                </div>
+            </div>
+            <div class="fila">
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/tratamiento-nutribela-termoproteccion-.jpg}" alt="">
+                        <p class="descripcion">Nutribela</p>
+                        <span class="precio">$ 17.600</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/shampoo-savital-keratina-550-ml.jpg}" alt="">
+                        <p class="descripcion">Savital</p>
+                        <span class="precio">$ 13.900</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/shampoo-ego-3x-230-ml.jpg}" alt="">
+                        <p class="descripcion">Ego</p>
+                        <span class="precio">$ 8.400</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/shampoo-ego-force-230-ml.jpg}" alt="">
+                        <p class="descripcion">Ego</p>
+                        <span class="precio">$ 8.400</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
+       <div class="seleccion" id="seleccion">
+        <div class="cerrar" onclick="cerrar()">
+            &#x2715
+        </div>
+        <div class="info">
+            <img th:src="@{/Iconos/Frijol-Sudespensa.png}" alt="" id="img frijol">
+            <h2 id="modelo">Frijol radical sudespensa 500 Gr</h2>
+
+            <span class="precio" id="precio">$ 4.400</span>
+
+            <div class="fila">
+                <div class="cantidad">
+                    <label>Cantidad</label>
+                    <select>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                    </select>
+                </div>
+                <button>AGREGAR AL CARRITO</button>
+            </div>
+
+        </div>
+       </div>
+    </section>
+
+    <script th:href="@{script.js}"></script>
+</body>
+</html>

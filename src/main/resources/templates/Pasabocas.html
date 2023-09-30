@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Pasabocas</title>
+    <link rel="stylesheet" th:href="@{/css/stylesDes.css}">
+    <link  th:href="@{css/bootstrap.min.css}" href="../../static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <!-- Bootstrap -->
+    <header id="header">
+        <nav class="navbar navbar-expand-md navbar bg">
+            <div class="logo">
+                <img id="imglogo" th:src="@{/Iconos/image-removebg-preview.png}" class="img-fluid" alt="Logo empresa" width="300">
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" th:href="@{/index}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/Nosotros}">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/contacto}">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div>
+            <a class="btn btn-outline-primary" th:href="@{/login}">INICIO <br> DE SESIÓN</a>
+        </div>
+    </header> 
+<body>
+    <section class="contenido">
+        <div class="mostrador" id="mostrador">
+            <div class="fila">
+                <div class="item"  onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/palomitas-de-maiz-act-ii-extra-mantequil.jpg}" alt="">
+                        <p class="descripcion">ActII</p>
+                        <span class="precio">$ 5.300</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/tosti-empanada-yupi-limon-28-gr.jpg}" alt="">
+                        <p class="descripcion">Tosti</p>
+                        <span class="precio">$ 1.500</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/tosti-arepas-yupi-150-gr.jpg}" alt="">
+                        <p class="descripcion">Tosti</p>
+                        <span class="precio">$ 5.200</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/tostacos-ramo-queso-200-gr.jpg}" alt="">
+                        <p class="descripcion">Tostacos</p>
+                        <span class="precio">$ 5.900</span>
+                    </div>
+                </div>
+            </div>
+            <div class="fila">
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/platanitos-ramo-140-gr.jpg}" alt="">
+                        <p class="descripcion">Platanitos</p>
+                        <span class="precio">$ 5.200</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto" >
+                        <img th:src="@{/Iconos/papas-rizadas-yupi-pollo-115-gr.jpg}" alt="">
+                        <p class="descripcion">Rizadas</p>
+                        <span class="precio">$ 4.900</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/papas-rizadas-yupi-31-gr.jpg}" alt="">
+                        <p class="descripcion">Rizadas</p>
+                        <span class="precio">$ 4.900</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/nachos-ramo-queso-190-gr.jpg}" alt="">
+                        <p class="descripcion">Nachos ramo</p>
+                        <span class="precio">$ 5.600</span>
+                    </div>
+                </div>
+            </div>
+            <div class="fila">
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/nachos-ramo-natural-190-gr.jpg}" alt="">
+                        <p class="descripcion">Nachos ramo</p>
+                        <span class="precio">$ 5.600</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/crispetas-popetas-mix-caramelo-queso-1.jpg}" alt="">
+                        <p class="descripcion">Popetas</p>
+                        <span class="precio">$ 3.600</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/detodito-frito-lay-natural-155-gr.jpg}" alt="">
+                        <p class="descripcion">De todito</p>
+                        <span class="precio">$ 6.6500</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/cheese-tris-frito-lay-familiar-93-gr.jpg}" alt="">
+                        <p class="descripcion">Cheese tris</p>
+                        <span class="precio">$ 2.750</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
+       <div class="seleccion" id="seleccion">
+        <div class="cerrar" onclick="cerrar()">
+            &#x2715
+        </div>
+        <div class="info">
+            <img th:src="@{/Iconos/Frijol-Sudespensa.png}" alt="" id="img frijol">
+            <h2 id="modelo">Frijol radical sudespensa 500 Gr</h2>
+
+            <span class="precio" id="precio">$ 4.400</span>
+
+            <div class="fila">
+                <div class="cantidad">
+                    <label>Cantidad</label>
+                    <select>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                    </select>
+                </div>
+                <button>AGREGAR AL CARRITO</button>
+            </div>
+
+        </div>
+       </div>
+    </section>
+
+    <script th:href="@{script.js}"></script>
+</body>
+</html>
