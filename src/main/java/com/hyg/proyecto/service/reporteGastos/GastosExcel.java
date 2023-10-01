@@ -26,7 +26,7 @@ public class GastosExcel {
         workbook = new XSSFWorkbook();
     }
     private void writeHeaderLine() {
-        sheet = workbook.createSheet("Ventas");
+        sheet = workbook.createSheet("Gastos");
         Row row = sheet.createRow(0);
 
         CellStyle style = workbook.createCellStyle();
@@ -52,6 +52,7 @@ public class GastosExcel {
             cell.setCellValue((String) value);
         }
         cell.setCellStyle(style);
+        
     }
 
     private void writeDataLines() {
@@ -64,7 +65,7 @@ public class GastosExcel {
             Row row = sheet.createRow(rowCount++);
             int columnCount = 0;
             createCell(row, columnCount++, gastos.getId(), style);          
-            createCell(row, columnCount++, gastos.getFecha(), style);
+            createCell(row, columnCount++, gastos.getFecha().toString(), style);
             createCell(row, columnCount++, gastos.getDescripcion(), style);
             createCell(row, columnCount++, gastos.getValor(), style);
             

@@ -4,19 +4,32 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "proveedores")
 public class Proveedor {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nombre;
-    private String direccion;
+    private String correoElectronico;
     private String telefono;
 
-    // Getters y setters
+
+    public Proveedor() {
+    }
+
+
+    public Proveedor(String nombre,  String correoElectronico, String telefono) {
+        this.nombre = nombre;
+
+        this.correoElectronico = correoElectronico;
+        this.telefono = telefono;
+    }
+
+
+
     public Long getId() {
         return id;
     }
@@ -33,12 +46,13 @@ public class Proveedor {
         this.nombre = nombre;
     }
 
-    public String getDireccion() {
-        return direccion;
+
+    public String getCorreoElectronico() {
+        return correoElectronico;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setCorreoElectronico(String correoElectronico) {
+        this.correoElectronico = correoElectronico;
     }
 
     public String getTelefono() {

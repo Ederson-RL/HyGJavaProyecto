@@ -1,48 +1,53 @@
 package com.hyg.proyecto.service;
 
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.hyg.proyecto.interfaces.IGastos;
+import com.hyg.proyecto.Repositorio.IGastos;
 import com.hyg.proyecto.interfazService.IgastoService;
 import com.hyg.proyecto.model.Gastos;
-
-
 
 
 @Service
 public class GastosService implements IgastoService {
 
-
-     @Autowired
-    private IGastos data;
-    @Override
-    public List<Gastos> listarG() {
-        return (List<Gastos>)data.findAll();
-    }
+    @Autowired
+    private IGastos GastoRepository;
+ 
 
     @Override
-    public Optional<Gastos> listarGId(int Id) {
-        return data.findById(Id);
-    }
-
-    @Override
-    public int saveG(Gastos g) {
-        int res=0;
-        Gastos gastos=data.save(g);
-        if (!gastos.equals(null)){
-            res=1;
+    public List<Gastos> ListAll(String palabraClave) {
+        if(palabraClave !=null){
+            return GastoRepository.findAll(palabraClave);
         }
 
-        return res;
+        return GastoRepository.findAll();
+        
+    }
+
+    public void saveG (Gastos gastos){
+       GastoRepository.save(gastos);
+    }
+
+    public Gastos getGastos(int id){
+        return GastoRepository.findById(id).get();
+
+    }
+
+
+
+    @Override
+    public void deleteG(int id) {
+        Gastos gastos =GastoRepository.findById(id).get();
+        if (gastos != null) {
+            GastoRepository.deleteById(id);
+        }
     }
 
     @Override
-    public void deleteG(int Id) {
-        data.deleteById(Id);
+    public Gastos Actualizargastos(Gastos gastos) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'Actualizargastos'");
     }
     
 }

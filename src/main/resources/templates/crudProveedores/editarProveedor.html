@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html   xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Editar Proveedor</title>
     <link rel="stylesheet" th:href="@{/css/menuAdmin.css}">
     <!-- Bootstrap -->
     <link  th:href="@{/css/bootstrap.min.css}" href="../../static/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -40,13 +40,13 @@
                     <strong>GESTIONAR VENTAS</strong>
                     <ul>
                         <li><a th:href="@{/listarV}"> Registrar Ventas</a></li>
-                        <li><a th:href="@{Error400}">Informe de Ventas</a></li>
+                        <li><a th:href="@{Error404}">Informe de Ventas</a></li>
                     </ul>
                 </li>
                 <li>
                     <strong>GESTIONAR COMPRAS</strong>
                     <ul>
-                        <li><a th:href="@{Error400}">Ver Proveedores</a></li>
+                        <li><a th:href="@{Error404}">Ver Proveedores</a></li>
                         <li><a th:href="@{/listarC}">Registrar Compra</a></li>
                         <li><a th:href="@{/listarG}">Registrar Gastos</a></li>
                     </ul>
@@ -60,7 +60,7 @@
                 <li>
                     <strong>GESTIONAR PEDIDOS</strong>
                     <ul>
-                        <li><a th:href="@{Error400}">Ver Pedidos</a></li>
+                        <li><a th:href="@{Error404}">Ver Pedidos</a></li>
                     </ul>
                 </li>
             </ul>
@@ -69,55 +69,45 @@
     <div class="container mt-4" >
         <div class="row justify-content-center">
         <div class="col-sm-6">
-            <form th:action="@{/saveV}" th:object=${venta} method="POST" >
+            <form th:action="@{/guardarProveedor}" th:object=${proveedores} method="POST" >
                 <div class="card">
                 <div class="card-header">
-                    <h3>Modulo Ventas</h3>
+                    <h3>Editar Proveedor</h3>
                 </div>
                 <div class="card-body">
                     <div class="form-group"> 
-                        <label for="">id  </label>
-                        <input th:field="*{id}" type="text" class="form-control">
+                        <label for="">Id</label>
+                        <input id="id" name="id" th:field="*{id}" type="number" class="form-control" readonly="readonly">
                     </div>
-                    <div class="form-group"> 
-                        <label for="">Fecha  </label>
-                        <input th:field="*{fecha}" type="date" class="form-control">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Proveedor</label>
+                        <input th:field="*{nombre}" type="text" class="form-control" required>
                     </div>
-                    <div class="form-group"> 
-                        <label for=""> Producto </label>
-                        <input th:field="*{producto}" type="text" class="form-control">
+
+                    <div class="form-group">
+                        <label for="correoElectronico">Correo Electronico</label>
+                        <input th:field="*{correoElectronico}" type="email" class="form-control" required>
                     </div>
-                    <div class="form-group"> 
-                        <label for="">Cantidad </label>
-                        <input th:field="*{cantidad}" type="number" class="form-control">
-                    </div>
-                    <div class="form-group"> 
-                        <label for="">Precio </label>
-                        <input th:field="*{precio}" type="text" class="form-control">
+                    <div class="form-group">
+                        <label for="telefono">Telefono</label>
+                        <input th:field="*{telefono}" type="number" class="form-control" required>
                     </div>
                 </div>
 
+            
+
                 <div class="card-footer">
-                    <input type="submit" value="Guardar" class="btn btn-success">
+                    <input type="submit" value="Guardar" class="btn btn-success"required>
                 </div>
+                </div>
+
+               
                 </div>
             </form>
         </div>
         </div>
     </div>
-    <script th:inline="javascript">
-   
-        var fechaActual = new Date();
 
-   
-        var añoActual = fechaActual.getFullYear();
-
-        
-        var inputFecha = document.getElementById("fecha");
-        inputFecha.min = añoActual + "-01-01"; 
-        inputFecha.max = añoActual + "-12-31"; 
-     
-    </script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script th:src="@{/js/Funciones.js}"></script>

@@ -1,28 +1,33 @@
-package com.hyg.proyecto.service.reporteCompra;
+package com.hyg.proyecto.service.reporteInventario;
 
 import java.io.IOException;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import com.hyg.proyecto.model.Compras;
-import javax.servlet.http.HttpServletResponse;
+
+import com.hyg.proyecto.sistemaventasspringboot.Producto;
 
 
-public class CompraExcel {
+
+
+public class ProductosExcel {
     private XSSFWorkbook workbook;
     private XSSFSheet sheet;
-    private List<Compras> CompraList;
+    private List<Producto> productosList;
 
-    public CompraExcel(List<Compras> CompraList) {
-        this.CompraList = CompraList;
+    public ProductosExcel(List<Producto>productosList) {
+        this.productosList = productosList;
         workbook = new XSSFWorkbook();
     }
     private void writeHeaderLine() {
-        sheet = workbook.createSheet("Compras");
+        sheet = workbook.createSheet("Inventario");
         Row row = sheet.createRow(0);
 
         CellStyle style = workbook.createCellStyle();
@@ -31,12 +36,10 @@ public class CompraExcel {
         font.setFontHeight(16);
         style.setFont(font);
 
-        createCell(row, 0, "ID Compras", style);
-        createCell(row, 1, "Fecha", style);
-        createCell(row, 2, "Proveedor", style);
-        createCell(row, 3, "Producto", style);
-        createCell(row, 4, "Cantidad", style);
-        createCell(row, 5, "precio", style); 
+        createCell(row, 0, "Id producto", style);
+        createCell(row, 1, "Nombre producto", style);
+        createCell(row, 2, "Precio", style);
+        createCell(row, 3, "Existencia", style); 
     }
 
     private void createCell(Row row, int columnCount, Object value, CellStyle style) {
@@ -58,15 +61,14 @@ public class CompraExcel {
         XSSFFont font = workbook.createFont();
         font.setFontHeight(14);
         style.setFont(font);
-        for (Compras compras : CompraList) {
+        for (Producto productos : productosList) {
             Row row = sheet.createRow(rowCount++);
             int columnCount = 0;
-            createCell(row, columnCount++, compras.getIdcompra(), style);
-            createCell(row, columnCount++, compras.getFechaC().toString(), style);
-            createCell(row, columnCount++, compras.getProveedorC(), style);
-            createCell(row, columnCount++, compras.getPrecioC(), style);
-            createCell(row, columnCount++, compras.getCantidadC(), style);
-            createCell(row, columnCount++, compras.getPrecioC(), style);
+            createCell(row, columnCount++, productos.getId(), style);          
+            createCell(row, columnCount++, productos.getNombre(), style);
+            createCell(row, columnCount++, productos.getPrecio(), style);
+            createCell(row, columnCount++, productos.getExistencia(), style);
+            
         }
     }
     public void export(HttpServletResponse response) throws IOException {
@@ -76,6 +78,4 @@ public class CompraExcel {
         workbook.write(response.getOutputStream());
         workbook.close();
     }
-
 }
-

@@ -69,8 +69,23 @@
     <div class="container mt-4">
         <a th:href="@{/newC}" class="btn btn-primary">NUEVO</a>
         <a th:href="@{/compra/exportC/excelC}" class="btn btn-primary">Excel</a>
-        
-        <table class="table">
+                                <div class="row">
+                            <div class="col">
+                              <br>
+                              <form th:action="@{/listarC}" class="form-inline" >
+                                     <div class="form-group mb-2">
+                                         <label for="">Filtrar:</label>
+                                         <div class="form-group mx-sm--3 mb-2"></div>
+                                         <input type="date" name="palabraClave" class="form-control" id="palabraClave" th:value="${palabraClave}" placeholder="Digite la fecha a buscar" required>
+                                     
+                                     </div>   
+                                      <input type="submit" class="btn btn-inf mb-2" value="Buscar">
+                                      &nbsp;&nbsp;
+                                     <input type="button" class="btn btn-secondary mb-2" value="Limpiar" onclick="limpiarCampos()">
+                                 </form>
+                                 <br>
+                            </div>
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>ID Compra</th>
@@ -80,18 +95,12 @@
                     <th>Cantidad</th>
                     <th>Precio</th>
                     <th>
-                        <div class="row">
-                            <div class="col">
-                              <a th:href="@{/compra/exportC/excelC}"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-check" viewBox="0 0 16 16">
-                                <path d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
-                                <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
-                              </svg></a>
-                            </div>
+
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="compra : ${Compras}">
+                <tr th:each="compra : ${compras}">
                     <td th:text="${compra.idcompra}"></td>
                     <td th:text="${compra.fechaC}"></td>
                     <td th:text="${compra.proveedorC}"></td>
@@ -100,13 +109,19 @@
                     <td th:text="${compra.precioC}"></td>
                     <td>
                         <a th:href="@{/editarC/}+${compra.idcompra}" class="btn btn-warning">Editar</a>
-                       <a th:onclick="eliminar([[${compra.idcompra}]])" class="btn btn-danger">Eliminar</a>
+                       <a th:href="@{/eliminarC/}+${compra.idcompra}" class="btn btn-danger">Eliminar</a>
                         </td>
                 </tr>
             </tbody>
         </table>
         
     </div>
+    <script type="text/javascript">
+
+        function limpiarCampos(){
+            window.location='/listarC';
+        }
+    </script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script th:src="@{/js/FuncionesC.js}"></script>
