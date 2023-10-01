@@ -47,7 +47,7 @@ public class controllerV {
 
     }
     @PostMapping("/saveV")
-    public String saveV(@Validated Venta v, Model model){
+    public String saveV( Venta v, Model model){
         
         service.saveV(v);
         return "redirect:/listarV";
