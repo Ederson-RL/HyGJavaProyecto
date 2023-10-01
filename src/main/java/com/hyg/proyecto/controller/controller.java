@@ -27,8 +27,6 @@ import org.springframework.validation.annotation.Validated;
 @RequestMapping
 public class controller {
 
-
-
     @GetMapping("/login")
     public String visualzarlogin(Model modelo) {
 
@@ -50,7 +48,7 @@ public class controller {
     @GetMapping("/index")
     public String visualzarindex(Model modelo) {
 
-        return "inicio";
+        return "index";
     }
 
     @GetMapping("/catalogo")
