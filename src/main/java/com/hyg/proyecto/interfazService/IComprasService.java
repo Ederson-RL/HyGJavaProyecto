@@ -1,15 +1,18 @@
 package com.hyg.proyecto.interfazService;
-import java.util.List;
-import java.util.Optional;
 
+import java.util.List;
 import com.hyg.proyecto.model.Compras;
 
-
-
 public interface IComprasService {
-    public List<Compras>listarC();
-    public Optional<Compras>listarCId(int Id);
-    public int saveC(Compras c);
-    public void deleteC (int Id);
+
+    public List<Compras> ListAllCompras(String palabraClave);
+
+    public void deleteCompras (int idcompra);
+
+    public Compras getCompras(int idcompra);
+
+    public Compras ActualizarCompras(Compras compras);
+
+    public void saveCompras(Compras compras);
 
 }

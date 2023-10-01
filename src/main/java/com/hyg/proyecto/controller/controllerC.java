@@ -1,64 +1,66 @@
 package com.hyg.proyecto.controller;
-
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
-
 import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.servlet.ModelAndView;
 import com.hyg.proyecto.interfazService.IComprasService;
 import com.hyg.proyecto.model.Compras;
 import com.hyg.proyecto.service.reporteCompra.CompraExcel;
 
+
 @Controller
 @RequestMapping
 public class controllerC {
-   @Autowired
+    @Autowired
     private IComprasService service;
+    String palabraClave;
     
-    @GetMapping("/listarC")
-    public String listarC(Model model){
-        List<Compras>Compras=service.listarC();
-        model.addAttribute("Compras", Compras);
-        return "indexC";
+    @RequestMapping("/listarC")
+    public String Compras(Model model,@Param("palabraClave")String palabraClave) {
+        this.palabraClave = palabraClave;
+        List<Compras> compras = service.ListAllCompras(palabraClave);
+       
+        model.addAttribute("compras", compras); 
+        model.addAttribute("palabraClave", palabraClave);
+        return "crudCompras/indexC";
+    }
+    @RequestMapping("/newC")
+    public String mostrarformularioCompras(Model model){
+        Compras compras= new Compras();
+        model.addAttribute("compras", compras);
+        return "crudCompras/formC";
 
     }
-          @GetMapping("/newC")
-    public String agregarC(Model model){
+    @PostMapping("/guardarCompras")
+    public String guardarCompras(@ModelAttribute("compras") Compras compras){
         
-        model.addAttribute("Compras", new Compras());
-        return "formC";
-
-    }
-    @PostMapping("/saveC")
-    public String saveC(@Validated Compras c, Model model){
-        
-        service.saveC(c);
+        service.saveCompras(compras);
         return "redirect:/listarC";
 
     }
-       @GetMapping("/editarC/{idcompra}")
-    public String editarC(@PathVariable int idcompra, Model model){
-         Optional<Compras>Compras=service.listarCId(idcompra);
-        model.addAttribute("Compras",  Compras);
-        return "formC";
+    @RequestMapping("/editarC/{idcompra}")
+    public ModelAndView mostrarformularioComprasEditar(@PathVariable(name="idcompra") int idcompra){
+        ModelAndView modelo= new ModelAndView("crudCompras/editarCompras");
+        Compras compras= service.getCompras(idcompra);
+        modelo.addObject("compras", compras);
+        return modelo;
     }
     @GetMapping("/eliminarC/{idcompra}")
-    public String deleteC( Model model,@PathVariable int idcompra){
-        service.deleteC(idcompra);
-        return "redirect:/listarC";
+    public String eliminarcompras(@PathVariable(name="idcompra") int idcompra) {
+        service.deleteCompras(idcompra);
+        return"redirect:/listarC";
 
     }
     @GetMapping("/compra/exportC/excelC")
@@ -69,7 +71,7 @@ public class controllerC {
             String headerKey = "Content-Disposition";
             String headerValue = "attachment; filename=compras"+ currentDateTime +".xlsx";
             response.setHeader(headerKey, headerValue);
-            List<Compras> CompraList = service.listarC();
+            List<Compras> CompraList = service.ListAllCompras(palabraClave);
             CompraExcel excelExporter = new CompraExcel (CompraList);
             excelExporter.export(response);
      }

@@ -1,33 +1,44 @@
 package com.hyg.proyecto.model;
 
+
+
+import java.io.Serializable;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name = "Gastos")
-public class Gastos {
+@Table(name="Gastos")
+public class Gastos implements Serializable{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy =GenerationType.IDENTITY)
     private int id;
-    private String fecha;
+     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Temporal(TemporalType.DATE) 
+    private Date fecha;
     private String descripcion;
     private int valor;
 
     public Gastos() {
     }
 
-    // Constructor que toma todos los campos como parámetros
-    public Gastos(int id, String fecha, String descripcion, int valor) {
+
+    public Gastos(int id, Date fecha, String descripcion, int valor) {
         this.id = id;
         this.fecha = fecha;
         this.descripcion = descripcion;
         this.valor = valor;
     }
 
-    // Getters y setters (métodos para acceder y modificar los campos)
+
     public int getId() {
         return id;
     }
@@ -36,15 +47,15 @@ public class Gastos {
         this.id = id;
     }
 
-    public String getFecha() {
+    public Date   getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(Date  fecha) {
         this.fecha = fecha;
     }
 
-    public String getDescripcion() {
+    public String  getDescripcion() {
         return descripcion;
     }
 
@@ -59,5 +70,8 @@ public class Gastos {
     public void setValor(int valor) {
         this.valor = valor;
     }
+
+    
+
 
 }

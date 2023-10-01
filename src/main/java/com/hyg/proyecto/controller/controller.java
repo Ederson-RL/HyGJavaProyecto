@@ -27,46 +27,7 @@ import org.springframework.validation.annotation.Validated;
 @RequestMapping
 public class controller {
 
-    // @Autowired
-    // private IproductoService service;
 
-    // @GetMapping("/listar")
-    // public String listar(Model model) {
-    // List<Producto> productos = service.listar();
-    // model.addAttribute("productos", productos);
-    // return "indexP";
-
-    // }
-
-    // @GetMapping("/new")
-    // public String agregar(Model model) {
-
-    // model.addAttribute("producto", new Producto());
-    // return "form";
-
-    // }
-
-    // @PostMapping("/save")
-    // public String save(@Validated Producto p, Model model) {
-
-    // service.save(p);
-    // return "redirect:/listar";
-
-    // }
-
-    // @GetMapping("/editar/{id}")
-    // public String editar(@PathVariable int id, Model model) {
-    // Optional<Producto> Producto = service.listarId(id);
-    // model.addAttribute("producto", Producto);
-    // return "form";
-    // }
-
-    // @GetMapping("/eliminar/{id}")
-    // public String delete(Model model, @PathVariable int id) {
-    // service.delete(id);
-    // return "redirect:/listar";
-
-    // }
 
     @GetMapping("/login")
     public String visualzarlogin(Model modelo) {
