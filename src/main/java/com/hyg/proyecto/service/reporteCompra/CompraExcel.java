@@ -11,7 +11,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import com.hyg.proyecto.model.Compras;
 import javax.servlet.http.HttpServletResponse;
 
-
 public class CompraExcel {
     private XSSFWorkbook workbook;
     private XSSFSheet sheet;
@@ -21,6 +20,7 @@ public class CompraExcel {
         this.CompraList = CompraList;
         workbook = new XSSFWorkbook();
     }
+
     private void writeHeaderLine() {
         sheet = workbook.createSheet("Compras");
         Row row = sheet.createRow(0);
@@ -36,7 +36,7 @@ public class CompraExcel {
         createCell(row, 2, "Proveedor", style);
         createCell(row, 3, "Producto", style);
         createCell(row, 4, "Cantidad", style);
-        createCell(row, 5, "precio", style); 
+        createCell(row, 5, "precio", style);
     }
 
     private void createCell(Row row, int columnCount, Object value, CellStyle style) {
@@ -69,6 +69,7 @@ public class CompraExcel {
             createCell(row, columnCount++, compras.getPrecioC(), style);
         }
     }
+
     public void export(HttpServletResponse response) throws IOException {
         writeHeaderLine();
         writeDataLines();

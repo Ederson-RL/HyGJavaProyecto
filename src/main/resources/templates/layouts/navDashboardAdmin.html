@@ -1,0 +1,60 @@
+<header id="header" th:fragment="navbar" xmlns:th="http://www.w3.org/1999/xhtml"
+    class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-md navbar bg">
+        <div class="icono-menu">
+            <img src="./../Iconos/HamburguerSinFondo.png" id="icono-menu">
+        </div>
+        <div class="logo">
+            <img id="imglogo" th:src="@{/Iconos/image-removebg-preview.png}" class="img-fluid" alt="Logo empresa">
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-md navbar bg">
+        <nav class="notify">
+            <a href="./../index.html">
+                <img src="./../Iconos/notifyAzul.jpg" alt="Notify">
+            </a>
+        </nav>
+        <nav class="user">
+            <a href="./../index.html">
+                <img src="./../Iconos/iconoAdmin.jpg" alt="User-ico">
+            </a>
+        </nav>
+    </nav>
+    <div class="cont-menu active" id="menu">
+        <ul class="ul-pading">
+            <li>
+                <strong>GESTIONAR VENTAS</strong>
+                <ul>
+                    <li><a th:href="@{/vender/}"> Registrar Ventas</a></li>
+                    <li><a th:href="@{/ventas/}">Informe de Ventas</a></li>
+                </ul>
+            </li>
+            <li>
+                <strong>GESTIONAR COMPRAS</strong>
+                <ul>
+                    <li><a th:href="@{Error400}">Ver Proveedores</a></li>
+                    <li><a th:href="@{/listarC}">Registrar Compra</a></li>
+                    <li><a th:href="@{Error400}">Detalles de la Compra</a></li>
+                </ul>
+            </li>
+            <li>
+                <strong>GESTIONAR INVENTARIO</strong>
+                <ul>
+                    <li><a th:href="@{/productos/mostrar}">Ver Inventario</a></li>
+                </ul>
+            </li>
+            <li>
+                <strong>GESTIONAR PEDIDOS</strong>
+                <ul>
+                    <li><a th:href="@{Error400}">Ver Pedidos</a></li>
+                </ul>
+            </li>
+            <li>
+                <strong>GESTIONAR USUARIOS</U></strong>
+                <ul>
+                    <li><a th:href="@{/userlist}">Lista de usuarios</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</header>
