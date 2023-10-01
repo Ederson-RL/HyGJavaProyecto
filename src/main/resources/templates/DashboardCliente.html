@@ -68,6 +68,15 @@
                         <li><a href="./../Errores/Pconstrucción.html" th:href="@{/Errores/Pconstrucción.html}">ver pedidos </a></li>
                     </ul>
                 </li>
+                <li>
+                    <form th:action="@{/logout}" method="post">
+                        <p>
+                            Bienvenido <b>[[${#request.userPrincipal.principal.fullName}]] </b>
+                            <span sec:authentication="principal.authorities"></span>
+                        </p>
+                        <input type="submit" value="Cerrar sesion" />
+                    </form>
+                </li>
             </ul>
         </div>
     </header>
