@@ -11,6 +11,6 @@ import com.hyg.proyecto.model.Compras;
 
 @Repository
 public interface ICompras extends JpaRepository<Compras,Integer> {
-    @Query("SELECT c FROM Compras c WHERE c.fechaC LIKE %?1%")
+    @Query("SELECT c FROM Compras c WHERE  "+" CONCAT(c.fechaC, c.proveedorC)" +" LIKE %?1%")
     public List<Compras>findAll(String palabraClave);
 }
