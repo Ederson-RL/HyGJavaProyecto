@@ -14,9 +14,7 @@ import javax.validation.Valid;
 public class ProductosController {
     @Autowired
     private ProductosRepository productosRepository;
-    String codigo;
 
-    
     @GetMapping(value = "/agregar")
     public String agregarProducto(Model model) {
         model.addAttribute("producto", new Producto());
@@ -25,7 +23,6 @@ public class ProductosController {
 
     @GetMapping(value = "/mostrar")
     public String mostrarProductos(Model model) {
-         Producto productos = productosRepository.findFirstByCodigo(codigo);
         model.addAttribute("productos", productosRepository.findAll());
         return "productos/ver_productos";
     }

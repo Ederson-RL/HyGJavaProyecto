@@ -1,8 +1,13 @@
 package com.hyg.proyecto.controller;
 
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
 
-
-
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,8 +26,6 @@ import org.springframework.validation.annotation.Validated;
 @Controller
 @RequestMapping
 public class controller {
-
-
 
     @GetMapping("/login")
     public String visualzarlogin(Model modelo) {
@@ -45,7 +48,7 @@ public class controller {
     @GetMapping("/index")
     public String visualzarindex(Model modelo) {
 
-        return "inicio";
+        return "index";
     }
 
     @GetMapping("/catalogo")
