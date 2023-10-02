@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">LACTEOS, HUEVOS Y  REFRIGERADOS</title>
+    <link rel="stylesheet" th:href="@{/css/stylesDes.css}">
+    <link  th:href="@{css/bootstrap.min.css}" href="../../static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <!-- Bootstrap -->
+    <header id="header">
+        <nav class="navbar navbar-expand-md navbar bg">
+            <div class="logo">
+                <img id="imglogo" th:src="@{/Iconos/image-removebg-preview.png}" class="img-fluid" alt="Logo empresa" width="300">
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" th:href="@{/index}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/Nosotros}">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/contacto}">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div>
+            <a class="btn btn-outline-primary" th:href="@{/login}">INICIO <br> DE SESIÓN</a>
+        </div>
+    </header> 
+<body>
+    <section class="contenido">
+        <div class="mostrador" id="mostrador">
+            <div class="fila">
+                <div class="item"  onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/huevo-extra-rojo-30-und.jpg}" alt="">
+                        <p class="descripcion">Huevos ext 30und</p>
+                        <span class="precio">$ 18.000</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/huevo-12-und.jpg}" alt="">
+                        <p class="descripcion">Huevos 12und</p>
+                        <span class="precio">$ 8.900</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/huevo-de-codorniz-24-und.jpg}" alt="">
+                        <p class="descripcion">codorniz 24und</p>
+                        <span class="precio">$ 6.500</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/huevo-a-rojo-30-und.jpg}" alt="">
+                        <p class="descripcion">Huevo rojo 30und</p>
+                        <span class="precio">$ 16.400</span>
+                    </div>
+                </div>
+            </div>
+            <div class="fila">
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/queso-doble-crema-colanta-250-gr.jpg}" alt="">
+                        <p class="descripcion">Queso doble crema</p>
+                        <span class="precio">$ 4.000</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto" >
+                        <img th:src="@{/Iconos/leche-saborizada-alpin-alpina-vainilla-.jpg}" alt="">
+                        <p class="descripcion"> Alpin vainilla</p>
+                        <span class="precio">$ 3.800</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/leche-de-soya-silk-almond-25c-orginal-6.jpg}" alt="">
+                        <p class="descripcion">leche almendra</p>
+                        <span class="precio">$ 5.000</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/queso-crema-untar-380-gr.jpg}" alt="">
+                        <p class="descripcion">Queso crema</p>
+                        <span class="precio">$ 5.900</span>
+                    </div>
+                </div>
+            </div>
+            <div class="fila">
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/queso-mozzarella-alpina-tajado-250-gr.jpg}" alt="">
+                        <p class="descripcion">Queso mozzarella</p>
+                        <span class="precio">$ 6.700</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/leche-alpina-semidescremanda-11-lt.jpg}" alt="">
+                        <p class="descripcion">Leche semidescremada</p>
+                        <span class="precio">$ 6.000</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/leche2.jpg}" alt="">
+                        <p class="descripcion">leche deslactosada</p>
+                        <span class="precio">$ 5.600</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/leche-alqueria-entera-13-lt.jpg}" alt="">
+                        <p class="descripcion">leche entera</p>
+                        <span class="precio">$ 5.400</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
+       <div class="seleccion" id="seleccion">
+        <div class="cerrar" onclick="cerrar()">
+            &#x2715
+        </div>
+        <div class="info">
+            <img th:src="@{/Iconos/Frijol-Sudespensa.png}" alt="" id="img frijol">
+            <h2 id="modelo">Frijol radical sudespensa 500 Gr</h2>
+
+            <span class="precio" id="precio">$ 4.400</span>
+
+            <div class="fila">
+                <div class="cantidad">
+                    <label>Cantidad</label>
+                    <select>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                    </select>
+                </div>
+                <button>AGREGAR AL CARRITO</button>
+            </div>
+
+        </div>
+       </div>
+    </section>
+
+    <script th:href="@{script.js}"></script>
+</body>
+</html>
