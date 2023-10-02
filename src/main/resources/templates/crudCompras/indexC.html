@@ -4,7 +4,20 @@
       layout:decorate="masterDasboard">
 <body>
 <main layout:fragment="contenido">
-<div class="container mt-4">
+    <style>
+        .contenido {
+            margin-left: 180px;
+            z-index: -1; /* Establece un valor negativo para enviarlo al fondo */
+        }
+        #tablax {
+            margin-top: 60px; /* Ajusta el margen superior según tu diseño */
+            z-index: -1;
+        }
+        .cabezaDeTabla{
+            z-index: -100;
+        }
+    </style>
+<div class="contenido container mt-4">
         <a th:href="@{/newC}" class="btn btn-primary">NUEVO</a>
         <a th:href="@{/compra/exportC/excelC}" class="btn btn-primary">Excel</a>
                                 <div class="row">
@@ -23,8 +36,8 @@
                                  </form>
                                  <br>
                             </div>
-        <table class="table table-bordered">
-            <thead>
+        <table id="tablax" class="table table-bordered">
+            <thead class="cabezaDeTabla">
                 <tr>
                     <th>ID Compra</th>
                     <th>Fecha</th>
