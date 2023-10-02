@@ -1,5 +1,11 @@
-<header id="header" th:fragment="navbar" xmlns:th="http://www.w3.org/1999/xhtml"
-    class="header">
+<header id="header" th:fragment="navbar" xmlns:th="http://www.w3.org/1999/xhtml" class="header">
+    <style>
+        .contenido {
+            margin-left: 180px;
+            z-index: -1; /* Establece un valor negativo para enviarlo al fondo */
+        }
+    </style>
+    
     <nav class="navbar navbar-expand-md navbar bg">
         <div class="icono-menu">
             <img src="./../Iconos/HamburguerSinFondo.png" id="icono-menu">
@@ -34,7 +40,7 @@
                 <ul>
                     <li><a th:href="@{/listarProveedores}">Ver Proveedores</a></li>
                     <li><a th:href="@{/listarC}">Registrar Compra</a></li>
-                    <li><a th:href="@{Error400}">Detalles de la Compra</a></li>
+                    <li><a th:href="@{/listarG}">Registrar Gastos</a></li>
                 </ul>
             </li>
             <li>

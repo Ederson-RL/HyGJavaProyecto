@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Limpieza</title>
+    <link rel="stylesheet" th:href="@{/css/stylesDes.css}">
+    <link  th:href="@{css/bootstrap.min.css}" href="../../static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <!-- Bootstrap -->
+    <header id="header">
+        <nav class="navbar navbar-expand-md navbar bg">
+            <div class="logo">
+                <img id="imglogo" th:src="@{/Iconos/image-removebg-preview.png}" class="img-fluid" alt="Logo empresa" width="300">
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" th:href="@{/index}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/Nosotros}">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/contacto}">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div>
+            <a class="btn btn-outline-primary" th:href="@{/login}">INICIO <br> DE SESIÓN</a>
+        </div>
+    </header> 
+<body>
+    <section class="contenido">
+        <div class="mostrador" id="mostrador">
+            <div class="fila">
+                <div class="item"  onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/jabon-para-ropa-top-terra-barra-3-und.jpg}" alt="">
+                        <p class="descripcion">Top terra</p>
+                        <span class="precio">$ 6.900</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/coco-varela-p-e-3-und.jpg}" alt="">
+                        <p class="descripcion">Jabon Coco</p>
+                        <span class="precio">$ 4.500</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/jabon-para-ropa-fab-barra-multiusos-30.jpg}" alt="">
+                        <p class="descripcion">Fab multiusos</p>
+                        <span class="precio">$ 3.100</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/suavizante-aromatelmanzana-doypac-425m.jpg}" alt="">
+                        <p class="descripcion">Aromatel</p>
+                        <span class="precio">$ 3.400</span>
+                    </div>
+                </div>
+            </div>
+            <div class="fila">
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/jabon-para-ropa-dersa-azul-barra-250-g.jpg}" alt="">
+                        <p class="descripcion">Dersa azul</p>
+                        <span class="precio">$ 3.000</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto" >
+                        <img th:src="@{/Iconos/jabon-para-ropa-rey-300-gr.jpg}" alt="">
+                        <p class="descripcion">Jabon rey</p>
+                        <span class="precio">$ 2.600</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/detergente-ariel-revita-color-polvo-2k.jpg}" alt="">
+                        <p class="descripcion">Detergente ariel</p>
+                        <span class="precio">$ 15.000</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/lavaplatos-axion-crema-aloe-450-gr.jpg}" alt="">
+                        <p class="descripcion">Axion lavaplatos</p>
+                        <span class="precio">$ 6.800</span>
+                    </div>
+                </div>
+            </div>
+            <div class="fila">
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/mr-musculo-doypac500.jpg}" alt="">
+                        <p class="descripcion">Mr musculo</p>
+                        <span class="precio">$ 5.500</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/limpiador-dersa-1a-polvo-dersa-500-gr.jpg}" alt="">
+                        <p class="descripcion">Dersa A1</p>
+                        <span class="precio">$ 3.000</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/limpiador-easy-off-bang-pistola-500-ml.jpg}" alt="">
+                        <p class="descripcion">Easy off</p>
+                        <span class="precio">$ 15.000</span>
+                    </div>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img th:src="@{/Iconos/lavaplatos-axion-barra-limon-300-gr.jpg}" alt="">
+                        <p class="descripcion">Barra axionl</p>
+                        <span class="precio">$ 2.800</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
+       <div class="seleccion" id="seleccion">
+        <div class="cerrar" onclick="cerrar()">
+            &#x2715
+        </div>
+        <div class="info">
+            <img th:src="@{/Iconos/Frijol-Sudespensa.png}" alt="" id="img frijol">
+            <h2 id="modelo">Frijol radical sudespensa 500 Gr</h2>
+
+            <span class="precio" id="precio">$ 4.400</span>
+
+            <div class="fila">
+                <div class="cantidad">
+                    <label>Cantidad</label>
+                    <select>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                    </select>
+                </div>
+                <button>AGREGAR AL CARRITO</button>
+            </div>
+
+        </div>
+       </div>
+    </section>
+
+    <script th:href="@{script.js}"></script>
+</body>
+</html>

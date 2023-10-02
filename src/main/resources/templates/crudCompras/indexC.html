@@ -4,22 +4,9 @@
       layout:decorate="masterDasboard">
 <body>
 <main layout:fragment="contenido">
-    <style>
-        .contenido {
-            margin-left: 180px;
-            z-index: -1; /* Establece un valor negativo para enviarlo al fondo */
-        }
-        #tablax {
-            margin-top: 60px; /* Ajusta el margen superior según tu diseño */
-            z-index: -1;
-        }
-        .cabezaDeTabla{
-            z-index: -100;
-        }
-    </style>
 <div class="contenido container mt-4">
-        <a th:href="@{/newC}" class="btn btn-primary">NUEVO</a>
-        <a th:href="@{/compra/exportC/excelC}" class="btn btn-primary">Excel</a>
+        <a th:href="@{/newC}" class="btn btn btn-outline-primary">NUEVO</a>
+        <a th:href="@{/compra/exportC/excelC}" class="btn btn-outline-success">Excel</a>
                                 <div class="row">
                             <div class="col">
                               <br>
@@ -46,7 +33,6 @@
                     <th>Cantidad</th>
                     <th>Precio</th>
                     <th>
-
                     </th>
                 </tr>
             </thead>
@@ -61,7 +47,7 @@
                     <td>
                         <a th:href="@{/editarC/}+${compra.idcompra}" class="btn btn-warning">Editar</a>
                        <a th:href="@{/eliminarC/}+${compra.idcompra}" class="btn btn-danger">Eliminar</a>
-                        </td>
+                    </td>
                 </tr>
             </tbody>
         </table>
