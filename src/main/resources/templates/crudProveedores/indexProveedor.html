@@ -4,7 +4,7 @@
       layout:decorate="masterDasboard">
 <body>
 <main layout:fragment="contenido">
-    <div class="container mt-4">
+    <div class="contenido container mt-4">
         <a th:href="@{/newProveedor}" class="btn btn-outline-primary">NUEVO</a>
         <a th:href="@{/Proveedores/export/excel}" class="btn btn-outline-success">EXCEL</a> 
         <br>
@@ -20,7 +20,7 @@
             <input type="button" class="btn btn-secondary mb-2" value="Limpiar" onclick="limpiarCampos()">
         </form>
         
-        <table class="table table-bordered">
+        <table id="tablax" class="table table-bordered">
             <thead>
                 <tr>
                     <th>ID</th>

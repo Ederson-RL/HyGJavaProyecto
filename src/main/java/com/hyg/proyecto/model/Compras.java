@@ -1,7 +1,5 @@
 package com.hyg.proyecto.model;
 
-
-
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -9,18 +7,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-
 @Entity
-@Table(name="Compras")
+@Table(name = "Compras")
 public class Compras {
     @Id
-    @GeneratedValue(strategy =GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idcompra;
     @Column(nullable = false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -30,14 +29,16 @@ public class Compras {
     private String productoC;
     private int cantidadC;
     private int precioC;
-  
-    
+
+    @ManyToOne
+    @JoinColumn(name = "proveedor_id") // Nombre de la columna de la clave foránea
+    private Proveedor proveedor;
+
     public Compras() {
-     
+
     }
 
-    
-    public Compras(int idcompra,  Date fechaC, String proveedorC, String productoC, int cantidadC, int precioC) {
+    public Compras(int idcompra, Date fechaC, String proveedorC, String productoC, int cantidadC, int precioC) {
         this.idcompra = idcompra;
         this.fechaC = fechaC;
         this.proveedorC = proveedorC;
@@ -54,11 +55,11 @@ public class Compras {
         this.idcompra = idcompra;
     }
 
-    public  Date  getFechaC() {
+    public Date getFechaC() {
         return fechaC;
     }
 
-    public void setFechaC( Date fechaC) {
+    public void setFechaC(Date fechaC) {
         this.fechaC = fechaC;
     }
 

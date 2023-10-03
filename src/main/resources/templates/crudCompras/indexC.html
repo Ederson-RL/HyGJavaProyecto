@@ -4,8 +4,8 @@
       layout:decorate="masterDasboard">
 <body>
 <main layout:fragment="contenido">
-<div class="container mt-4">
-        <a th:href="@{/newC}" class="btn btn-outline-primary">NUEVO</a>
+<div class="contenido container mt-4">
+        <a th:href="@{/newC}" class="btn btn btn-outline-primary">NUEVO</a>
         <a th:href="@{/compra/exportC/excelC}" class="btn btn-outline-success">Excel</a>
                                 <div class="row">
                             <div class="col">
@@ -23,8 +23,8 @@
                                  </form>
                                  <br>
                             </div>
-        <table class="table table-bordered">
-            <thead>
+        <table id="tablax" class="table table-bordered">
+            <thead class="cabezaDeTabla">
                 <tr>
                     <th>ID Compra</th>
                     <th>Fecha</th>
@@ -33,7 +33,6 @@
                     <th>Cantidad</th>
                     <th>Precio</th>
                     <th>
-
                     </th>
                 </tr>
             </thead>
@@ -48,7 +47,7 @@
                     <td>
                         <a th:href="@{/editarC/}+${compra.idcompra}" class="btn btn-warning">Editar</a>
                        <a th:href="@{/eliminarC/}+${compra.idcompra}" class="btn btn-danger">Eliminar</a>
-                        </td>
+                    </td>
                 </tr>
             </tbody>
         </table>

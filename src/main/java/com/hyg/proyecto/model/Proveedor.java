@@ -1,9 +1,12 @@
 package com.hyg.proyecto.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Proveedor {
@@ -16,19 +19,18 @@ public class Proveedor {
     private String correoElectronico;
     private String telefono;
 
+    @OneToMany(mappedBy = "proveedor")
+    private List<Compras> compras;
 
     public Proveedor() {
     }
 
-
-    public Proveedor(String nombre,  String correoElectronico, String telefono) {
+    public Proveedor(String nombre, String correoElectronico, String telefono) {
         this.nombre = nombre;
 
         this.correoElectronico = correoElectronico;
         this.telefono = telefono;
     }
-
-
 
     public Long getId() {
         return id;
@@ -45,7 +47,6 @@ public class Proveedor {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
 
     public String getCorreoElectronico() {
         return correoElectronico;
