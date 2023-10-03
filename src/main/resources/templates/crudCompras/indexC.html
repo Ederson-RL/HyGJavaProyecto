@@ -12,9 +12,9 @@
                               <br>
                               <form th:action="@{/listarC}" class="form-inline" >
                                      <div class="form-group mb-2">
-                                         <label for="">Filtrar:</label>
+                                         <label for="fechaC">Filtrar:</label>
                                          <div class="form-group mx-sm--3 mb-2"></div>
-                                         <input type="date" name="palabraClave" class="form-control" id="palabraClave" th:value="${palabraClave}" placeholder="Digite la fecha a buscar" required>
+                                         <input type="text" name="palabraClave" class="form-control" id="fechaC" th:value="${palabraClave}" placeholder="Para filtar ingrese la fecha en formato(AAAA-MM-DD) o ingrese el nombre del proveedor" required>
                                      
                                      </div>   
                                       <input type="submit" class="btn btn-inf mb-2" value="Buscar">
@@ -60,6 +60,11 @@
             window.location='/listarC';
         }
     </script>
+     <script>
+        $(function() {
+          $("#fechaC").datepicker({ dateFormat: "dd/mm/yy" });
+        });
+      </script>
 </main>
 </body>
 </html>

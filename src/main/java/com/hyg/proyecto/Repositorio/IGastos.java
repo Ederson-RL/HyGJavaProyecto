@@ -9,7 +9,7 @@ import com.hyg.proyecto.model.Gastos;
 @Repository
 public interface IGastos  extends  JpaRepository<Gastos,Integer> {
 
-    @Query("SELECT g FROM Gastos g WHERE g.fecha LIKE %?1%")
+    @Query("SELECT g FROM Gastos g WHERE  "+" CONCAT(g.id,g.fecha)" +" LIKE %?1%")
     public List<Gastos>findAll(String palabraClave);
   
 }
